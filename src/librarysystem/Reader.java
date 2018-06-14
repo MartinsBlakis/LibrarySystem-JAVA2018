@@ -55,7 +55,7 @@ public class Reader {
         this.libraryUserNumber = libraryUserNumber;
     }
 
-    public static void printCurrentTakenBookList(ArrayList<Book> currentTakenBookList) {
+    public void printCurrentTakenBookList() { 
         for (Book itais : currentTakenBookList) {
             System.out.println(itais.getTitle()+" by "+itais.getAuthor());
         } 

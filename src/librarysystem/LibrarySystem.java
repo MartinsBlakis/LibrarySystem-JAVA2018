@@ -56,19 +56,21 @@ public class LibrarySystem {
         
         giveBook(gramata1, lasitajs1);
         giveBook(gramata2, lasitajs1);
+        
+        takeBook(gramata1, lasitajs1);
+        
+        removeBook("123-2-11-166650-0");
  
         printAllBooks(bookList);
-        printAllReaders(readerList);
-        printAllEmployees(employeeList);
-        printWorkingTime(workingTimeList);
-        
-        
+        //printAllReaders(readerList);
+        //printAllEmployees(employeeList);
+        //printWorkingTime(workingTimeList);
     }
     
     public static void printAllReaders(ArrayList<Reader> itais){
         System.out.println("READERS:");
         for(Reader i: readerList){
-            System.out.println("NAME: "+i.getName()+", SURNAME: "+i.getSurname()+", LIBRARY USER NR.: "+i.getLibraryUserNumber());
+            System.out.println("NAME: "+i.getName()+", SURNAME: "+i.getSurname()+", LIBRARY USER NR.: "+i.getLibraryUserNumber()+"CURRENTLY TAKEN BOOKS: ");
             i.printCurrentTakenBookList();
         } 
     }
@@ -96,11 +98,32 @@ public class LibrarySystem {
         readerId.currentTakenBookList.add(bookId);
     }
     
-    public static void takeBook(){}
+    public static void takeBook(Book bookId, Reader readerId){
+        bookList.add(bookId);
+        readerId.currentTakenBookList.remove(bookId);
+    }
     
-    public static void addBook(){}
+    public static void addBook(Book newName){
+        if (bookList.contains(newName))
+            System.out.println("The name is already taken");
+        else {
+            
+        }
+    }
     
-    public static void removeBook(){}
+    public static boolean removeBook(String bookISBN){
+        if (bookList.isEmpty()){
+            return false;
+        }
+        else{
+            for(Book itais: bookList){
+                if(bookISBN==itais.getIsbn()){
+                    bookList.remove(itais);
+            }
+        }
+            return true;
+        } 
+    }
         
     
 }
