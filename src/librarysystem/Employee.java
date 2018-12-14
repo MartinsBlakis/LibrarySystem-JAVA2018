@@ -11,7 +11,10 @@ package librarysystem;
  */
 public class Employee {
     private String name, surname;
-    private int employeeId;
+    public int employeeId;
+
+    public Employee() {
+    }
     
     public Employee(String name, String surname, int employeeId) {
         this.name = name;
@@ -42,6 +45,4 @@ public class Employee {
         this.employeeId = employeeId;
     }
 
-
-    
 }

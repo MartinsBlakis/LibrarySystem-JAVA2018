@@ -10,15 +10,16 @@ package librarysystem;
  * @author Lietotajs
  */
 public class Book {
-    private String isbn;
-    private String year;
+    public String isbn;
+    private int year;
     private String author;
     private String title;
     private double rating;
     private String condition;
     private String rarity;
-    
-    public Book(String isbn, String year, String author, String title, double rating, String condition, String rarity) {
+
+    public Book() {}
+    public Book(String isbn, int year, String author, String title, double rating, String condition, String rarity) {
         this.isbn = isbn;
         this.year = year;
         this.author = author;
@@ -31,15 +32,15 @@ public class Book {
         return isbn;
     }
 
-    public void setIsbn(String isbn) {
+    public  void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
@@ -71,7 +72,7 @@ public class Book {
         return condition;
     }
 
-    public void changeCondition(String condition) {
+    public void setCondition(String condition) {
         this.condition = condition;
     }
 
@@ -82,4 +83,5 @@ public class Book {
     public void setRarity(String rarity) {
         this.rarity = rarity;
     }
+
 }

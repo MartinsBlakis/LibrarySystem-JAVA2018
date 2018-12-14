@@ -14,8 +14,11 @@ import java.util.Iterator;
 public class Reader {
     private String name;
     private String surname;
-    private int libraryUserNumber;
+    public int libraryUserNumber;
     public ArrayList<Book> currentTakenBookList;
+
+    public Reader() {
+    }
     
     public Reader(String newName, String newSurname, int newLibraryUserNumber) {
         this.name = newName;
